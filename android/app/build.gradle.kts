@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.mejoralo_cdt"
+    namespace = "dev.endersonvizc.mejoralo_cdt"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -21,13 +21,43 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.mejoralo_cdt"
+        applicationId = "dev.endersonvizc.mejoralo_cdt"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+    }
+
+    flavorDimensions.add("environment")
+
+    productFlavors {
+        create("development") {
+            dimension = "environment"
+            resValue(
+                type = "string",
+                name = "app_name",
+                value = "[DEV] MejoraloCDT")
+            applicationIdSuffix = ".dev"
+            versionNameSuffix = "-dev"
+        }
+        create("staging") {
+            dimension = "environment"
+            resValue(
+                type = "string",
+                name = "app_name",
+                value = "[STG] MejoraloCDT")
+            applicationIdSuffix = ".staging"
+            versionNameSuffix = "-staging"
+        }
+        create("production") {
+            resValue(
+                type = "string",
+                name = "app_name",
+                value = "MejoraloCDT")
+            dimension = "environment"
+        }
     }
 
     buildTypes {

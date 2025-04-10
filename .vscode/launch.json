@@ -9,6 +9,8 @@
             "request": "launch",
             "type": "dart",
             "args": [
+                "--flavor",
+                "development",
                 "--dart-define-from-file",
                 "env.dev.json"
             ]
@@ -19,6 +21,8 @@
             "type": "dart",
             "flutterMode": "profile",
             "args": [
+                "--flavor",
+                "development",
                 "--dart-define-from-file",
                 "env.dev.json"
             ]
@@ -29,6 +33,8 @@
             "type": "dart",
             "flutterMode": "release",
             "args": [
+                "--flavor",
+                "development",
                 "--dart-define-from-file",
                 "env.dev.json"
             ]

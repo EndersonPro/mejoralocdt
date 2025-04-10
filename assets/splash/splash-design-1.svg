@@ -1,0 +1,10 @@
+<svg viewBox="0 0 360 640" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo -->
+  <rect width="360" height="640" fill="#3498db" />
+  
+  <!-- Círculo central -->
+  <circle cx="180" cy="280" r="80" fill="#2c3e50" stroke="#f39c12" stroke-width="6" />
+  
+  <!-- $ Símbolo -->
+  <text x="180" y="300" font-family="Arial" font-size="50" font-weight="bold" fill="#f1c40f" text-anchor="middle">$</text>
+</svg>

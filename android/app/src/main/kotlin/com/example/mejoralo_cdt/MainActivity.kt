@@ -1,4 +1,4 @@
-package com.example.mejoralo_cdt
+package dev.endersonvizc.mejoralo_cdt
 
 import io.flutter.embedding.android.FlutterActivity
 
