@@ -164,21 +164,21 @@ class _DashboardPageState extends State<DashboardPage> {
                                 },
                                 borderRadius: BorderRadius.circular(6),
                               ),
-                              DropdownButton(
-                                value: 1,
-                                items: List.generate(
-                                  3,
-                                  (index) => DropdownMenuItem(
-                                    value: index,
-                                    child: Text('Año'),
-                                  ),
-                                ),
-                                onChanged: (value) {
-                                  // Handle dropdown change
-                                },
+                              // DropdownButton(
+                              //   value: 1,
+                              //   items: List.generate(
+                              //     3,
+                              //     (index) => DropdownMenuItem(
+                              //       value: index,
+                              //       child: Text('Año'),
+                              //     ),
+                              //   ),
+                              //   onChanged: (value) {
+                              //     // Handle dropdown change
+                              //   },
 
-                                borderRadius: BorderRadius.circular(6),
-                              ),
+                              //   borderRadius: BorderRadius.circular(6),
+                              // ),
                             ],
                           ),
                           SizedBox(
