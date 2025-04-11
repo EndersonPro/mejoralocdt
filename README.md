@@ -1,4 +1,4 @@
-# mejoralo_cdt
+# MejoraloCDT
 
 1. ¿Qué tipo de gráficas y visualizaciones podrías usar para que el usuario pueda tener esta
 información fácilmente accesible desde su celular?
@@ -15,9 +15,15 @@ ende debe resaltar más? ¿Qué debería ver después?
 
 3. ¿Qué aplicaciones puedes tomar de referencia para diseñar estas visualizaciones?
 
+![fintech_dashboard](https://github.com/user-attachments/assets/a8560f8c-22f5-4ef9-8594-1efd174dac85)
 [Fintech Dashboard Design concept](https://dribbble.com/shots/24236272-Fintech-Dashboard-Design-concept)
+
+![fintech_app_example_01](https://github.com/user-attachments/assets/29590827-1151-4c83-a14c-697c9768f823)
 [Fintech App UI](https://dribbble.com/shots/21220306-Fintech-App-UI)
+
+![crypto_wallet](https://github.com/user-attachments/assets/3f1d3e30-6cd8-4223-9da3-f78b7a8a0082)
 [Crypto Wallet](https://dribbble.com/shots/21190299-Crypto-Wallet-Dark-Mode)
 
-Wireframe 
+Wireframe
 
+![Wireframe](https://github.com/user-attachments/assets/5ae323dc-ed16-4024-a52d-fe026b34743d)
