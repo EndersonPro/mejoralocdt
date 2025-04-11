@@ -24,14 +24,14 @@ class TransactionApi extends TransactionGateway {
       );
 
       if (response.statusCode != 200) {
-        return Right(Failure(message: 'Error fetching transactions'));
+        return Right(ServerFailure(message: 'Error fetching transactions'));
       }
 
       final body = jsonDecode(response.body);
       final data = body["data"];
 
       if (data == null) {
-        return Right(Failure(message: 'No data found'));
+        return Right(ServerFailure(message: 'No data found'));
       }
 
       final transactions =

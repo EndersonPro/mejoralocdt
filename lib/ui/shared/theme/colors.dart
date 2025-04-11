@@ -9,4 +9,5 @@ abstract class AppColors {
   static const errorColor = Color(0xFFe74c3c);
   static const surfaceColor = Colors.white;
   static const lightGrey = Color(0xFFbdc3c7);
+  static const fog = Color.fromARGB(255, 244, 244, 244);
 }
