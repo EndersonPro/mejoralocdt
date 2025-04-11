@@ -27,11 +27,3 @@ ende debe resaltar más? ¿Qué debería ver después?
 Wireframe
 
 ![Wireframe](https://github.com/user-attachments/assets/5ae323dc-ed16-4024-a52d-fe026b34743d)
-
-DEMO:
-
-
-https://github.com/user-attachments/assets/b80464fd-6419-4b84-bb19-e038b81c7bd3
-
-
-
