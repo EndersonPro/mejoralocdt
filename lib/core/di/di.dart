@@ -1,4 +1,3 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mejoralo_cdt/features/dashboard/presentation/pages/dashboard/cubit/dashboard_cubit.dart';
 import 'package:mejoralo_cdt/features/dashboard/presentation/widgets/edge_chat/cubit/chart_cubit.dart';
@@ -18,12 +17,12 @@ void setupDependencies() {
         HttpClientImpl(environmentConfig: getIt<EnvironmentConfigInterface>()),
   );
 
-  getIt.registerLazySingleton<Connectivity>(() => Connectivity());
+  getIt.registerLazySingleton<ConnectivityInterface>(() => ConnectivityImpl());
 
   getIt.registerLazySingleton<TransactionGateway>(
     () => TransactionApiCacheDecorator(
       TransactionApi(httpClient: getIt<HttpClientInterface>()),
-      connectivity: getIt<Connectivity>(),
+      connectivity: getIt<ConnectivityInterface>(),
     ),
   );
   getIt.registerLazySingleton<GetTransactionsUseCase>(
@@ -32,8 +31,10 @@ void setupDependencies() {
   );
 
   getIt.registerLazySingleton<DashboardCubit>(
-    () =>
-        DashboardCubit(getTransactionsUseCase: getIt<GetTransactionsUseCase>()),
+    () => DashboardCubit(
+      getTransactionsUseCase: getIt<GetTransactionsUseCase>(),
+      connectivity: getIt<ConnectivityInterface>(),
+    ),
   );
 
   getIt.registerLazySingleton<ChartCubit>(() => ChartCubit());

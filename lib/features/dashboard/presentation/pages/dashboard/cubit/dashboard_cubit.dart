@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mejoralo_cdt/common/common.dart';
 import 'package:mejoralo_cdt/features/dashboard/dashboard.dart';
 import 'package:mejoralo_cdt/features/dashboard/domain/models/transaction/transaction.dart';
 
@@ -7,16 +8,27 @@ part 'dashboard_state.dart';
 
 class DashboardCubit extends Cubit<DashboardState> {
   final GetTransactionsUseCase getTransactionsUseCase;
-  DashboardCubit({required this.getTransactionsUseCase})
-    : super(
-        DashboardState(
-          isFetchingData: false,
-          transactions: [],
-          totalInvestment: 0,
-          totalProfit: 0,
-          averageROI: 0,
-        ),
-      );
+
+  final ConnectivityInterface _connectivity;
+
+  DashboardCubit({
+    required this.getTransactionsUseCase,
+    required ConnectivityInterface connectivity,
+  }) : _connectivity = connectivity,
+       super(
+         DashboardState(
+           isFetchingData: false,
+           transactions: [],
+           totalInvestment: 0,
+           totalProfit: 0,
+           averageROI: 0,
+         ),
+       );
+
+  Stream<bool> get isConnectedToInternet => _connectivity.isConnected;
+  void closeConnectionToStream() {
+    _connectivity.dispose();
+  }
 
   Future<void> getTransactions() async {
     emit(state.copyWith(isFetchingData: true));

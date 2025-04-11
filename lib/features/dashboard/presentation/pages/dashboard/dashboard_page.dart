@@ -10,8 +10,46 @@ import '../../widgets/edge_chat/edge_chart.dart';
 import '../../widgets/title_info.dart';
 import 'cubit/dashboard_cubit.dart';
 
-class DashboardPage extends StatelessWidget {
+class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
+
+  @override
+  State<DashboardPage> createState() => _DashboardPageState();
+}
+
+class _DashboardPageState extends State<DashboardPage> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<DashboardCubit>().isConnectedToInternet.listen((state) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).hideCurrentSnackBar();
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Row(
+            children: [
+              Icon(state ? Icons.wifi : Icons.wifi_off, color: Colors.white),
+              const SizedBox(width: 10),
+              Text(
+                state
+                    ? 'Conexión a internet restablecida'
+                    : 'Sin conexión a internet',
+              ),
+            ],
+          ),
+          backgroundColor: state ? Colors.green : Colors.red,
+          duration: const Duration(seconds: 3),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    });
+  }
+
+  @override
+  void dispose() {
+    context.read<DashboardCubit>().closeConnectionToStream();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
