@@ -328,7 +328,8 @@ class _DashboardPageState extends State<DashboardPage> {
                                       color:
                                           isExpired
                                               ? AppColors.errorColor
-                                                  .withOpacity(0.2)
+                                              // ignore: deprecated_member_use
+                                              .withOpacity(0.2)
                                               : AppColors.surfaceColor,
                                       borderRadius: BorderRadius.circular(6),
                                     ),

@@ -80,7 +80,7 @@ class EdgeChart extends StatelessWidget {
     monthlyReturns.forEach((monthKey, profit) {
       // Obtener el año y mes de la clave
       List<String> parts = monthKey.split('-');
-      int year = int.parse(parts[0]);
+      // int year = int.parse(parts[0]);
       int month = int.parse(parts[1]);
 
       // Formatear el mes como "Ene", "Feb", etc.
